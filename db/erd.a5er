@@ -1,0 +1,161 @@
+﻿# A5:ER FORMAT:11
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+GenerateDropTableStatement=1
+DropTableIfExists=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=c_election_candidates
+LName=c_election_candidates
+Comment=
+TableOption=
+Page=Main
+Left=50
+Top=50
+Field="election_id","election_id","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="party_id","party_id","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="district_id","district_id","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="candidate_id","candidate_id","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="plans_country","plans_country","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="plans_district","plans_district","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="plans_purpose","plans_purpose","text","NOT NULL",,"","",$FFFFFFFF,""
+Index==1,candidate_id
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",50,50
+
+[Entity]
+PName=m_name
+LName=m_name
+Comment=
+TableOption=
+Page=Main
+Left=350
+Top=50
+Field="id","id","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="attr","attr","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="order_num","order_num","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="name","name","varchar(300)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",350,50
+
+[Entity]
+PName=t_candidates
+LName=t_candidates
+Comment=
+TableOption=
+Page=Main
+Left=650
+Top=50
+Field="id","id","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="first_name","first_name","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="last_name","last_name","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="fullname","fullname","varchar(200)","NOT NULL",,"","",$FFFFFFFF,""
+Field="occupation","occupation","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="degree","degree","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="education","education","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="experience","experience","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="current_job","current_job","varchar(200)","NOT NULL",,"","",$FFFFFFFF,""
+Field="web_site","web_site","varchar(500)","NOT NULL",,"","",$FFFFFFFF,""
+Field="facebook","facebook","varchar(500)","NOT NULL",,"","",$FFFFFFFF,""
+Field="twitter","twitter","varchar(200)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",650,50
+
+[Entity]
+PName=t_election_district
+LName=t_election_district
+Comment=
+TableOption=
+Page=Main
+Left=950
+Top=50
+Field="id","id","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="election_id","election_id","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="district_name","district_name","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="district_area","district_area","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="district_mandate","district_mandate","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20200710103003
+Position="Main",950,50
+
+[Entity]
+PName=t_elections
+LName=t_elections
+Comment=
+TableOption=
+Page=Main
+Left=1250
+Top=50
+Field="id","id","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="status","status","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="election_year","election_year","year(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="election_date","election_date","date","NOT NULL",,"","",$FFFFFFFF,""
+Field="tag","tag","varchar(200)","NOT NULL",,"","",$FFFFFFFF,""
+Field="is_active","is_active","tinyint(1)","NOT NULL",,"","",$FFFFFFFF,""
+Index==1,election_year,tag
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",1250,50
+
+[Entity]
+PName=t_political_party
+LName=t_political_party
+Comment=
+TableOption=
+Page=Main
+Left=1550
+Top=50
+Field="id","id","int(11) auto_increment","NOT NULL",0,"","",$FFFFFFFF,""
+Field="status","status","tinyint(4)","NOT NULL",,"","",$FFFFFFFF,""
+Field="political_name","political_name","varchar(500)","NOT NULL",,"","",$FFFFFFFF,""
+Field="short_name","short_name","varchar(20)","NOT NULL",,"","",$FFFFFFFF,""
+Field="logo","logo","varchar(300)","NOT NULL",,"","",$FFFFFFFF,""
+Index==1,political_name
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="Main",1550,50
